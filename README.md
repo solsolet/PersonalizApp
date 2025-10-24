@@ -54,6 +54,7 @@ Para hacer este ejercicio he creado los ficheros:
 El margen se puede definir dentro de la definición de _drawable_ con la etiqueta `<padding>`. Des del layout también sería posible con `android:padding`.
 
 #### Ejercicio 2. Personalización de los botones
+He creado las imágenes con GIMP.
 #### Ejercicio 3. Animación por fotogramas
 #### Ejercicio 4. Niveles
 ## Sesión 10

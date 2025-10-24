@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- presionado : gris oscuro -->
+    <item android:state_pressed="true"
+        android:drawable="@drawable/boton_pressed" />
+    <!-- seleccionado : amarillo -->
+    <item android:state_focused="true"
+        android:drawable="@drawable/boton_focused" />
+    <!-- normal: no seleccionado ni presionado : gris claro -->
+    <item android:drawable="@drawable/boton_normal" />
+</selector>

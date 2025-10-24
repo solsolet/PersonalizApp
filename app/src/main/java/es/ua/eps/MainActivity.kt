@@ -1,11 +1,10 @@
-package es.ua.eps.personalizapp
+package es.ua.eps
 
-import android.R
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.enableEdgeToEdge
-import es.ua.eps.personalizapp.Drawables
+import es.ua.eps.Drawables
 import es.ua.eps.personalizapp.databinding.MainActivityBinding
 
 class MainActivity : ComponentActivity() {
