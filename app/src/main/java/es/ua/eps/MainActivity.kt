@@ -1,8 +1,11 @@
 package es.ua.eps.personalizapp
 
+import android.R
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.enableEdgeToEdge
+import es.ua.eps.personalizapp.Drawables
 import es.ua.eps.personalizapp.databinding.MainActivityBinding
 
 class MainActivity : ComponentActivity() {
@@ -18,7 +21,11 @@ class MainActivity : ComponentActivity() {
 
         with(bindings){
             setContentView(root)
+            buttonDrawable.setOnClickListener { irDrawable() }
         }
-
+    }
+    private fun irDrawable(){
+        val ir = Intent(this@MainActivity, Drawables::class.java)
+        startActivity(ir)
     }
 }

@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">PersonalizApp</string>
+    <string name="app_name" translatable="false">PersonalizApp</string>
+    <string name="drawable" translatable="false">Drawable</string>
+    <string name="personalizacion_componentes">Personalización de componentes</string>
+    <string name="notificaciones">Notificaciones</string>
+    <string name="pantalla_gestos">Pantalla táctil y detección de gestos</string>
+    <string name="estilos_temas">Estilos y temas</string>
+    <string name="hilos_ejecucion">Hilos de ejecucion</string>
 </resources>

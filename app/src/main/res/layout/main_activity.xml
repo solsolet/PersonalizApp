@@ -6,8 +6,56 @@
 
     <TextView
         android:id="@+id/textViewFondo"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="TextViewFondo"
-        android:textAlignment="center" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:text="@string/app_name"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/buttonDrawable"
+        android:layout_width="375dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="@string/drawable" />
+
+    <Button
+        android:id="@+id/buttonPersonalizacion"
+        android:layout_width="375dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="@string/personalizacion_componentes" />
+    <Button
+        android:id="@+id/buttonNotificacion"
+        android:layout_width="375dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="@string/notificaciones" />
+    <Button
+        android:id="@+id/buttonPantallaGestos"
+        android:layout_width="375dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="@string/pantalla_gestos" />
+    <Button
+        android:id="@+id/buttonEstilosTemas"
+        android:layout_width="375dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="@string/estilos_temas" />
+    <Button
+        android:id="@+id/buttonHilos"
+        android:layout_width="375dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="@string/hilos_ejecucion" />
 </LinearLayout>
