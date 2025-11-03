@@ -1,11 +1,11 @@
-package es.ua.eps
+package es.ua.eps.personalizapp
 
 import android.os.Bundle
-import androidx.activity.ComponentActivity
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AppCompatActivity
 import es.ua.eps.personalizapp.databinding.DrawablesBinding
 
-class Drawables : ComponentActivity() {
+class Drawables : AppCompatActivity() {
     private lateinit var bindings : DrawablesBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,7 +18,7 @@ class Drawables : ComponentActivity() {
 
         with(bindings){
             setContentView(root)
-            //buttonPersonalizado
+
         }
     }
 }
