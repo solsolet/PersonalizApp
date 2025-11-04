@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity
 import es.ua.eps.personalizapp.databinding.DrawablesBinding
 
 class Drawables : AppCompatActivity() {
-    private lateinit var bindings : DrawablesBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -14,11 +13,7 @@ class Drawables : AppCompatActivity() {
         initUI()
     }
     private fun initUI(){ //like initLayout in Filmoteca
-        bindings = DrawablesBinding.inflate(layoutInflater)
-
-        with(bindings){
-            setContentView(root)
-
-        }
+        val bindings = DrawablesBinding.inflate(layoutInflater)
+        setContentView(bindings.root)
     }
 }

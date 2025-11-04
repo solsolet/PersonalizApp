@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="citas">
+        <item>@string/cita_Gordimer</item>
+        <item>@string/cita_Seneca</item>
+        <item>@string/cita_Moliere</item>
+        <item>@string/cita_SanAgustin</item>
+        <item>@string/cita_Voltaire</item>
+        <item>@string/cita_Napoleon</item>
+        <item>@string/cita_LutherKing</item>
+        <item>@string/cita_MerceMarçal</item>
+        <item>@string/cita_Exupery</item>
+        <item>@string/cita_Edison</item>
+        <item>@string/cita_Marx</item>
+        <item>@string/cita_Fuster</item>
+        <item>@string/cita_Nietzsche</item>
+        <item>@string/cita_china</item>
+        <item>@string/cita_pot</item>
+    </string-array>
+</resources>

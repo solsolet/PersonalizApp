@@ -6,4 +6,19 @@
     <string name="pantalla_gestos">Pantalla táctil y detección de gestos</string>
     <string name="estilos_temas">Estilos y temas</string>
     <string name="hilos_ejecucion">Hilos de ejecucion</string>
+    <string name="cita_Gordimer">La verdad no siempre es bonita, pero el hambre de ella sí.</string>
+    <string name="cita_Seneca">La adversidad es ocasión de virtud.</string>
+    <string name="cita_Moliere">El celoso ama más, pero el que no lo es ama mejor.</string>
+    <string name="cita_SanAgustin">Da lo que tienes para que merezcas recibir lo que te falta.</string>
+    <string name="cita_Voltaire">Sólo es inmensamente rico aquel que sabe limitar sus deseos.</string>
+    <string name="cita_Napoleon">La envidia es una declaración de inferioridad.</string>
+    <string name="cita_LutherKing">Si supiera que el mundo se acaba mañana, yo, hoy todavía, plantaría un árbol.</string>
+    <string name="cita_MerceMarçal">A l\'atzar agraeixo 3 dons: haver nascut dona, de classe baixa i nacio oprimida. I el terbol atzur de ser tres voltes rebel</string>
+    <string name="cita_Exupery">Solo con el corazón se puede ver bien; lo esencial es invisible a los ojos</string>
+    <string name="cita_Edison">No he fracasado. He encontrado 10000 soluciones que no funcionan.</string>
+    <string name="cita_Marx">El motor de la historia es la lucha de clases.</string>
+    <string name="cita_Fuster">La nostra patria es la nostra llengua.</string>
+    <string name="cita_Nietzsche">Sin musica la vida seria un error.</string>
+    <string name="cita_china">Si te caes siete veces, levántate ocho.</string>
+    <string name="cita_pot">Qui fa el que pot, no esta obligat a mes</string>
 </resources>
