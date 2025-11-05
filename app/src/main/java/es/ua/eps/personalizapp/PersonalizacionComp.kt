@@ -3,6 +3,7 @@ package es.ua.eps.personalizapp
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.SeekBar
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import es.ua.eps.personalizapp.databinding.PersonalizacionCompBinding
@@ -26,6 +27,21 @@ class PersonalizacionComp : AppCompatActivity() {
             val buttonX = findViewById<Button>(R.id.buttonBorrable)!!
 
             buttonX.setOnClickListener { editText.setText("") }
+
+            //Grafica
+            seekBarGrafica.setOnSeekBarChangeListener(
+                object : SeekBar.OnSeekBarChangeListener{
+                    override fun onProgressChanged(
+                        seekBar: SeekBar?,
+                        progress: Int,
+                        fromUser: Boolean
+                    ) {
+                        grafica.setPercentage(progress)
+                    }
+                    override fun onStartTrackingTouch(seekBar: SeekBar?) {}
+                    override fun onStopTrackingTouch(seekBar: SeekBar?) {}
+                }
+            )
         }
     }
 }
