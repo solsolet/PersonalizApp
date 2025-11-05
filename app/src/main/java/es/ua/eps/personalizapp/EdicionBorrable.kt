@@ -19,11 +19,11 @@ class EdicionBorrable : LinearLayout {
         inicializar()
     }
     private fun inicializar() {
-        // Creamos la interfaz a partir del layout
+        // Create interface from layout
         val li = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
         li.inflate(R.layout.edicion_borrable, this, true)
 
-        // Obtenemos las referencias a las vistas hijas
+        // References child views
         editText = findViewById<EditText>(R.id.editText)!!
         button = findViewById<Button>(R.id.buttonBorrable)!!
     }
