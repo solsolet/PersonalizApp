@@ -35,4 +35,7 @@
     <string name="detener">Detener</string>
     <string name="notBarraEstado">Notificaciones en la barra de estado</string>
     <string name="pantallaTactil">Pantalla tactil</string>
+    <string name="bienvenidaEstilo">Bienvenido a mi aplicacion</string>
+    <string name="continuar">Continuar</string>
+    <string name="volver">Volver</string>
 </resources>

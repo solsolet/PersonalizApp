@@ -27,6 +27,9 @@
         <activity android:name=".PersonalizacionComp"/>
         <activity android:name=".Notificaciones"/>
         <activity android:name=".Pantalla"/>
+        <activity android:name=".EstilosTemas"/>
+        <activity android:name=".Actividad2Estilos"/>
+        <activity android:name=".Hilos"/>
     </application>
 
 </manifest>

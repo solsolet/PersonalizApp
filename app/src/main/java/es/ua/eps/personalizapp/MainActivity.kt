@@ -23,6 +23,8 @@ class MainActivity : AppCompatActivity() {
             buttonPersonalizacion.setOnClickListener { irPersonalizacion() }
             buttonNotificacion.setOnClickListener { irNotificacion() }
             buttonPantallaGestos.setOnClickListener { irPantallaGestos() }
+            buttonEstilosTemas.setOnClickListener { irEstilos() }
+            buttonHilos.setOnClickListener { irHilos() }
         }
     }
     private fun irDrawable(){
@@ -39,6 +41,14 @@ class MainActivity : AppCompatActivity() {
     }
     private fun irPantallaGestos(){
         val ir = Intent(this@MainActivity, Pantalla::class.java)
+        startActivity(ir)
+    }
+    private fun irEstilos(){
+        val ir = Intent(this@MainActivity, EstilosTemas::class.java)
+        startActivity(ir)
+    }
+    private fun irHilos(){
+        val ir = Intent(this@MainActivity, Hilos::class.java)
         startActivity(ir)
     }
 }
