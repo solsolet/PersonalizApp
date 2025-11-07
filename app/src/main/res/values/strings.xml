@@ -21,4 +21,17 @@
     <string name="cita_Nietzsche">Sin musica la vida seria un error.</string>
     <string name="cita_china">Si te caes siete veces, levántate ocho.</string>
     <string name="cita_pot">Qui fa el que pot, no esta obligat a mes</string>
+    <string name="hintEscribe">Escribe un texto</string>
+    <string name="mostrarToast">Mostrar Toast</string>
+    <string name="toast">Toast</string>
+    <string name="snackBar">SnakBar</string>
+    <string name="mostrarSnack">Mostrar Snak Bar</string>
+    <string name="tareas">Lista de Tareas:</string>
+    <string name="dialogosSeleccion">Dialogos de seleccion</string>
+    <string name="color">Color</string>
+    <string name="tam">Tamaño</string>
+    <string name="loremIpsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dolor eros, tincidunt in congue eget, placerat vitae ante. Vestibulum ornare tellus id varius porta. In hendrerit, velit eget ultricies vestibulum, ante nisi luctus risus, at auctor nunc sem eu lectus. Vestibulum tincidunt metus quis posuere blandit. Sed convallis tincidunt vestibulum. Etiam vel mauris aliquet, lobortis sapien et, mattis sapien. Mauris auctor mauris varius libero facilisis, efficitur placerat velit commodo.  Etiam efficitur nulla vitae pretium ornare. In nec elementum ex. Sed commodo elementum urna. Curabitur lectus sem, placerat non sollicitudin eu, congue sed diam. Quisque congue gravida lectus, nec hendrerit sem scelerisque ut. Duis eleifend quis nunc non faucibus. Integer vel ligula lacus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur scelerisque erat sed libero ullamcorper tincidunt. Nam molestie libero nec risus maximus ultricies. Praesent ut lorem non leo placerat sagittis. Nullam tincidunt est id lorem porta tempus. Fusce tristique molestie augue sed ultrices. Ut neque metus, congue in malesuada et, dapibus consequat leo. Sed tortor metus, accumsan in lacus eget, finibus fringilla lectus.</string>
+    <string name="iniciar">Iniciar</string>
+    <string name="detener">Detener</string>
+    <string name="notBarraEstado">Notificaciones en la barra de estado</string>
 </resources>

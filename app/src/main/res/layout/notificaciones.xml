@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scroll"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="35dp">
+
+
+        <TextView
+            android:id="@+id/textViewNotificaciones"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="@string/notificaciones"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textViewToast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/toast"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/editTextToast"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="name"
+            android:ems="10"
+            android:hint="@string/hintEscribe"
+            android:inputType="text"
+            android:paddingVertical="15dp" />
+
+        <Button
+            android:id="@+id/buttonToast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingHorizontal="30dp"
+            android:text="@string/mostrarToast" />
+
+        <TextView
+            android:id="@+id/textViewSnack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/snackBar"
+            android:layout_marginTop="30dp"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/editTextSnack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="name"
+            android:ems="10"
+            android:hint="@string/hintEscribe"
+            android:inputType="text"
+            android:paddingVertical="15dp" />
+
+        <Button
+            android:id="@+id/buttonSnack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingHorizontal="20dp"
+            android:text="@string/mostrarSnack" />
+
+        <TextView
+            android:id="@+id/textViewTareas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tareas" />
+
+        <TextView
+            android:id="@+id/textViewDialogos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dialogosSeleccion"
+            android:layout_marginTop="30dp"
+            android:textSize="20sp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <Button
+                android:id="@+id/buttonColor"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/color" />
+
+            <Button
+                android:id="@+id/buttonTamanyo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/tam" />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/textViewLorem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/loremIpsum" />
+
+        <TextView
+            android:id="@+id/textViewBarraEstado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/notBarraEstado"
+            android:layout_marginTop="30dp"
+            android:textSize="20sp"/>
+
+        <Button
+            android:id="@+id/buttonIniciar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/iniciar"
+            android:layout_marginTop="10dp"/>
+
+        <Button
+            android:id="@+id/buttonDetener"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/detener" />
+
+    </LinearLayout>
+</ScrollView>
