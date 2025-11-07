@@ -26,6 +26,7 @@
         <activity android:name=".Drawables"/>
         <activity android:name=".PersonalizacionComp"/>
         <activity android:name=".Notificaciones"/>
+        <activity android:name=".Pantalla"/>
     </application>
 
 </manifest>

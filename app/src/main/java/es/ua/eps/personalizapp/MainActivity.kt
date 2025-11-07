@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
             buttonDrawable.setOnClickListener { irDrawable() }
             buttonPersonalizacion.setOnClickListener { irPersonalizacion() }
             buttonNotificacion.setOnClickListener { irNotificacion() }
+            buttonPantallaGestos.setOnClickListener { irPantallaGestos() }
         }
     }
     private fun irDrawable(){
@@ -34,6 +35,10 @@ class MainActivity : AppCompatActivity() {
     }
     private fun irNotificacion(){
         val ir = Intent(this@MainActivity, Notificaciones::class.java)
+        startActivity(ir)
+    }
+    private fun irPantallaGestos(){
+        val ir = Intent(this@MainActivity, Pantalla::class.java)
         startActivity(ir)
     }
 }

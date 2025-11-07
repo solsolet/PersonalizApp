@@ -1,6 +1,7 @@
 # Android Avanzado
 Para esta práctica he creado una única aplicación llamada _PersonalizApp_. La pantalla principal nos permitirá ver que práctica queremos visualizar según el botón que pulsemos. En caso de tener algún problema visualizando la práctica se puede consultar en [GitHub](https://github.com/solsolet/PersonalizApp.git).
 ## Sesión 8
+Para ver el funcionamiento de todos los ejercicios, se puede ver en el vídeo ![Demo_S8](img-readme/Demo_S8.mp4) en la carpeta `img-readme`.
 ### Drawables
 Accedemos al pulsar el primer botón `Drawables`.
 #### Ejercicio 1. Personalización del aspecto
@@ -305,4 +306,29 @@ seekBarGrafica.setOnSeekBarChangeListener(
 De este ejercicio destaco que lo que mas me ha costado cuadrar y que se vea bien es la posición del círculo en la vista, al principio salía el círculo cortado, o el sector no estaba bien alienado... pero al final la solución era más fácil de lo que yo intentaba hacer.
 
 ### Notificaciones
+#### Ejercicio 1
+
+#### Ejercicio 2
+
+#### Ejercicio 3
+
+#### Ejercicio 4
+<!-- explicar metodo a método com va o posar en plan 1 perisos i ho fan estes funcions i les demanem en el onCreate, despres altres -->
+
 ## Sesión 10
+Para ver el funcionamiento de todos los ejercicios, se puede ver en el vídeo ![Demo_S10](img-readme/Demo_S10.mp4) en la carpeta `img-readme`.
+### Pantalla táctil
+#### Ejercicio 1
+Para hacer este ejercicio he creado la clase `PantallaCaja.kt` para implementar el componente propio.
+<!--posar i explicar codi PantallaCaja-->
+
+Luego lo he añadido al layout `pantalla.xml`:
+```xml
+<es.ua.eps.personalizapp.PantallaCaja
+    android:id="@+id/caja"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/material_dynamic_neutral80" />
+```
+#### Ejercicio 2
+###
