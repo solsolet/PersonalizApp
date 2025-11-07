@@ -30,6 +30,9 @@
         <activity android:name=".EstilosTemas"/>
         <activity android:name=".Actividad2Estilos"/>
         <activity android:name=".Hilos"/>
+        <activity android:name=".ThreadActivity"/>
+        <activity android:name=".AsyncTaskActivity"/>
+        <activity android:name=".CorrutinasActivity"/>
     </application>
 
 </manifest>
