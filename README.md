@@ -345,32 +345,34 @@ Reason: Input dispatching timed out (f20ec0d es.ua.eps.personalizapp/es.ua.eps.p
 ErrorId: b231c25a-5b80-4e3e-a2a9-f85732731474
 Frozen: false
 Load: 0.57 / 0.22 / 0.4
-                                                                    ----- Output from /proc/pressure/memory -----
-                                                                                                                                       some avg10=0.07 avg60=0.18 avg300=0.06 total=15903740
-                                                                    full avg10=0.02 avg60=0.05 avg300=0.01 total=7369562
-                                                                    ----- End output from /proc/pressure/memory -----
-                                                                    ----- Output from /proc/pressure/cpu -----
-                                                                    some avg10=4.43 avg60=2.64 avg300=0.84 total=46979815
-                                                                    full avg10=0.00 avg60=0.00 avg300=0.00 total=0
-                                                                    ----- End output from /proc/pressure/cpu -----
-                                                                    ----- Output from /proc/pressure/io -----
-                                                                    some avg10=0.66 avg60=0.92 avg300=0.28 total=44353073
-                                                                    full avg10=0.34 avg60=0.45 avg300=0.13 total=17963249
-                                                                    ----- End output from /proc/pressure/io -----
-                                                                    
-                                                                    CPU usage from 27160ms to -1ms ago (2025-11-07 23:11:31.874 to 2025-11-07 23:11:59.035):
+----- Output from /proc/pressure/memory ----
+some avg10=0.07 avg60=0.18 avg300=0.06 total=15903740
+full avg10=0.02 avg60=0.05 avg300=0.01 total=7369562
+
+----- End output from /proc/pressure/memory -----
+----- Output from /proc/pressure/cpu -----
+some avg10=4.43 avg60=2.64 avg300=0.84 total=46979815
+full avg10=0.00 avg60=0.00 avg300=0.00 total=0
+
+----- End output from /proc/pressure/cpu -----
+----- Output from /proc/pressure/io -----
+some avg10=0.66 avg60=0.92 avg300=0.28 total=44353073
+full avg10=0.34 avg60=0.45 avg300=0.13 total=17963249
+               
+----- End output from /proc/pressure/io -----
+CPU usage from 27160ms to -1ms ago (2025-11-07 23:11:31.874 to 2025-11-07 23:11:59.035):
     12% 488/android.hardware.graphics.composer3-service.ranchu: 1.6% user + 11% kernel / faults: 1 minor 63 major
-                                                                        12% 515/surfaceflinger: 3.6% user + 8.3% kernel / faults: 74 minor 3 major
-                                                                    9.8% 693/system_server: 4% user + 5.7% kernel / faults: 21748 minor 589 major
-                                                                        3.3% 952/com.android.systemui: 1.1% user + 2.2% kernel / faults: 3628 minor 103 major
-                                                                        2.5% 1076/com.google.android.apps.nexuslauncher: 0.4% user + 2% kernel / faults: 180 minor 3 major
-                                                                        0.6% 470/android.hardware.audio.service: 0.1% user + 0.4% kernel / faults: 9 minor
-                                                                        0.5% 506/audioserver: 0.3% user + 0.2% kernel / faults: 3 minor 2 major
-                                                                        0.4% 3151/com.android.vending: 0.2% user + 0.2% kernel / faults: 1818 minor 7291 major
-                                                                        0.4% 484/android.hardware.sensors-service.multihal: 0.1% user + 0.2% kernel
-                                                                        0.2% 56/kswapd0: 0% user + 0.2% kernel
-                                                                    22% TOTAL: 5.4% user + 14% kernel + 1.3% iowait + 0.6% irq + 0.1% softirq
-                                                                    CPU usage from 10ms to 273ms later (2025-11-07 23:11:59.045 to 2025-11-07 23:11:59.307):
+    12% 515/surfaceflinger: 3.6% user + 8.3% kernel / faults: 74 minor 3 major
+    9.8% 693/system_server: 4% user + 5.7% kernel / faults: 21748 minor 589 major
+    3.3% 952/com.android.systemui: 1.1% user + 2.2% kernel / faults: 3628 minor 103 major
+    2.5% 1076/com.google.android.apps.nexuslauncher: 0.4% user + 2% kernel / faults: 180 minor 3 major
+    0.6% 470/android.hardware.audio.service: 0.1% user + 0.4% kernel / faults: 9 minor
+    0.5% 506/audioserver: 0.3% user + 0.2% kernel / faults: 3 minor 2 major
+    0.4% 3151/com.android.vending: 0.2% user + 0.2% kernel / faults: 1818 minor 7291 major
+    0.4% 484/android.hardware.sensors-service.multihal: 0.1% user + 0.2% kernel
+    0.2% 56/kswapd0: 0% user + 0.2% kernel
+    22% TOTAL: 5.4% user + 14% kernel + 1.3% iowait + 0.6% irq + 0.1% softirq
+    CPU usage from 10ms to 273ms later (2025-11-07 23:11:59.045 to 2025-11-07 23:11:59.307):
                                                                         92% 515/surfaceflinger: 0% user + 92% kernel
     68% 575/RenderEngine: 0% user + 68% kernel
     20% 583/RegionSampling: 4% user + 16% kernel
