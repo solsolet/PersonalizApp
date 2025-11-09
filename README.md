@@ -1,6 +1,6 @@
 # Android Avanzado
 Para esta práctica he creado una única aplicación llamada _PersonalizApp_. La pantalla principal nos permitirá ver que práctica queremos visualizar según el botón que pulsemos. En caso de tener algún problema visualizando la práctica se puede consultar en [GitHub](https://github.com/solsolet/PersonalizApp.git).
-Este readme no estará finalizado seguramente para cuando se lea la entrega de Moodle, no me ha dado tiempo a terminarlo intetnando acabar los ejercicios rápidamente. Si se consulta el repositoio en GitHub seguramente se pueda ver actualizado. 
+Este readme no estará finalizado seguramente para cuando se lea la entrega de _Moodle_, no me ha dado tiempo a terminarlo intentando acabar los ejercicios rápidamente. Si se consulta el repositorio en GitHub seguramente se pueda ver actualizado. 
 ## Sesión 8
 Para ver el funcionamiento de todos los ejercicios, se puede ver en el vídeo ![Demo_S8](img-readme/Demo_S8.mp4) en la carpeta `img-readme`.
 ### Drawables
@@ -319,10 +319,25 @@ De este ejercicio destaco que lo que mas me ha costado cuadrar y que se vea bien
 ## Sesión 10
 Para ver el funcionamiento de todos los ejercicios, se puede ver en el vídeo ![Demo_S10](img-readme/Demo_S10.mp4) en la carpeta `img-readme`.
 ### Pantalla táctil
+Para hacer este ejercicio he creado la clase `Pantalla.kt` que incluye en su layout el componente propio creado a partir de `PantallaCaja.kt`.
 #### Ejercicio 1
-Para hacer este ejercicio he creado la clase `PantallaCaja.kt` para implementar el componente propio.
-<!--posar i explicar codi PantallaCaja-->
+Para este apartado, primero había que crear el cuadrado rojo
+(todo este código dentro de `PantallaCaja.kt`):
+```kotlin
+private val SIZE = 50
+private var cX = 100F // coordenadas centro
+private var cY = 100F
 
+private var caja = Paint().apply{
+    style = Paint.Style.FILL
+    color = Color.RED
+}
+
+override fun onDraw(canvas: Canvas) {
+    canvas.drawRect(cX - SIZE, cY - SIZE, cX + SIZE, cY + SIZE, caja)
+    super.onDraw(canvas)
+}
+```
 Luego lo he añadido al layout `pantalla.xml`:
 ```xml
 <es.ua.eps.personalizapp.PantallaCaja
@@ -331,9 +346,143 @@ Luego lo he añadido al layout `pantalla.xml`:
     android:layout_height="match_parent"
     android:background="@color/material_dynamic_neutral80" />
 ```
+Y tenía que comprobar que al tocar dentro de los confines de la caja se mueva:
+```kotlin
+override fun onTouchEvent(e: MotionEvent): Boolean {
+    if (event.action == MotionEvent.ACTION_DOWN) {
+        val dentro = e.x >= cX - SIZE && e.x <= cX + SIZE && e.y >= cY - SIZE && e.y <= cY + SIZE
+        return dentro
+    }
+    else if (event.action == MotionEvent.ACTION_MOVE) {
+        
+        cX = e.x
+        cY = e.y
+        this.invalidate()
+    }
+    return true
+}
+```
 #### Ejercicio 2
+Sobre el ejercicio anterior incluimos nuevas variables  y funciones para implementar un _Gesture Detector_ y el gesto _fling_. El resultado de la clase fue este:
+```kotlin
+//Variables iniciales caja
+private var SIZE...
+
+private var gDetector = GestureDetectorCompat(context, this@PantallaCaja)
+
+private var vX: Float = -1f // fling
+private var vY: Float = -1f
+
+private var caja = Paint().apply{ ... }
+
+private var lineaCaja = Paint().apply{
+    style = Paint.Style.FILL
+    strokeWidth = 6f
+    color = Color.BLACK
+}
+
+private var gestoEnCaja = false
+
+override fun onDraw(canvas: Canvas) {
+    // si hay línea fling pendiente, dibujarla 1º
+    if (vX >= 0f && vY >= 0f) {
+        canvas.drawLine(vX, vY, cX, cY, lineaCaja)
+    }
+    canvas.drawRect(...)
+}
+
+override fun onTouchEvent(event: MotionEvent?): Boolean {
+    if (event == null) return false
+    // Delegamos el evento al detector
+    gDetector.onTouchEvent(event)
+    
+    return true
+}
+
+override fun onDown(e: MotionEvent): Boolean {
+    val dentro = e.x >= cX - SIZE && e.x <= cX + SIZE && e.y >= cY - SIZE && e.y <= cY + SIZE
+    gestoEnCaja = dentro
+    
+    return true
+}
+
+override fun onFling(
+    e1: MotionEvent?, e2: MotionEvent,
+    velocityX: Float, velocityY: Float
+): Boolean {
+    if (!gestoEnCaja || e1 == null) return false
+
+    vX = e1.x
+    vY = e1.y
+
+    cX = e2.x
+    cY = e2.y
+
+    this.invalidate()
+    return true
+}
+
+override fun onLongPress(e: MotionEvent) {}
+
+override fun onScroll(
+    e1: MotionEvent?, e2: MotionEvent,
+    distanceX: Float, distanceY: Float
+): Boolean {
+    if (!gestoEnCaja) return false
+
+    cX = e2.x
+    cY = e2.y
+    vX = -1f
+    vY = -1f
+
+    this.invalidate()
+    return true
+}
+
+override fun onShowPress(e: MotionEvent) {}
+
+override fun onSingleTapUp(e: MotionEvent): Boolean {
+    if (!gestoEnCaja) return false
+
+    caja.color = if (caja.color == Color.RED) Color.BLUE else Color.RED
+    invalidate()
+    return true
+}
+```
 ### Estilos y temas
-La realización de este ejercicio ha afectado al aspecto general de la aplicación así que se puede comprobar fácilmente. Si se entra a su apartado se pueden apreciar los botones creados a partir de `fondo_boton.xml`
+La realización de este ejercicio ha afectado al aspecto general de la aplicación así que se puede comprobar fácilmente. Si se entra a su apartado se pueden apreciar los botones creados a partir de `fondo_boton.xml`.
+Todo el cambio de estilo ha tenido que ver con la modificación del archivo `themes.xml` dentro de la carpeta `values`, quedando con este aspecto:
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.PersonalizApp" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Cambiamos color de fondo -->
+        <item name="android:windowBackground">@color/color_fondo</item>
+        <!-- Aplicamos este color a todos los textos -->
+        <item name="android:textColor">@color/color_texto</item>
+        <item name="fontFamily">serif</item>
+
+        <item name="android:textViewStyle">@style/TextViewTheme</item>
+    </style>
+    <style name="TextViewTheme">
+        <!-- También podemos aplicar los estilos al texto directamente desde aquí -->
+        <item name="android:textColor">@color/color_texto</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <style name="EstiloTitulo" parent="@android:style/TextAppearance.Large">
+        <item name="android:textColor">@color/color_texto</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+    </style>
+
+    <style name="EstiloBoton">
+        <item name="android:background">@drawable/fondo_boton</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+</resources>
+```
+Posteriormente, para añadir el estilo, en el _layout_ de la actividad, `estilos_temas.xml`al título y botón se le añade el atributo `style="@style/EstiloTitulo" o _EstiloBoton_.
 ### Hilos
 Tras poner el código propuesto me salta el siguiente error:
 ```log

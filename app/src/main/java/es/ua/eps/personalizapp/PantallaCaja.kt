@@ -65,10 +65,8 @@ class PantallaCaja @JvmOverloads constructor(
     }
 
     override fun onFling(
-        e1: MotionEvent?,
-        e2: MotionEvent,
-        velocityX: Float,
-        velocityY: Float
+        e1: MotionEvent?, e2: MotionEvent,
+        velocityX: Float, velocityY: Float
     ): Boolean {
         if (!gestoEnCaja || e1 == null) return false
 
@@ -82,23 +80,11 @@ class PantallaCaja @JvmOverloads constructor(
         return true
     }
 
-//    override fun onFling(
-//        e1: MotionEvent?,
-//        e2: MotionEvent?,
-//        velocityX: Float,
-//        velocityY: Float
-//    ): Boolean {
-//        // No debería llamarse esta sobrecarga (ya tenemos la otra), devolvemos false
-//        return false
-//    }
-
     override fun onLongPress(e: MotionEvent) {}
 
     override fun onScroll(
-        e1: MotionEvent?,
-        e2: MotionEvent,
-        distanceX: Float,
-        distanceY: Float
+        e1: MotionEvent?, e2: MotionEvent,
+        distanceX: Float, distanceY: Float
     ): Boolean {
         if (!gestoEnCaja) return false
 

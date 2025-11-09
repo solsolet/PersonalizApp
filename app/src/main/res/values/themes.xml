@@ -3,7 +3,6 @@
     <style name="Theme.PersonalizApp" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Cambiamos color de fondo -->
         <item name="android:windowBackground">@color/color_fondo</item>
-
         <!-- Aplicamos este color a todos los textos -->
         <item name="android:textColor">@color/color_texto</item>
         <item name="fontFamily">serif</item>
