@@ -20,7 +20,7 @@ class Hilos : AppCompatActivity() {
 
         with(bindings){
             setContentView(root)
-            // Cçodigo enunciado
+            // Codigo enunciado
     //        val tvCrono = tvCrono
     //        var t = 10
     //        do {

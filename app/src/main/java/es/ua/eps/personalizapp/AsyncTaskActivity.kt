@@ -24,26 +24,28 @@ class AsyncTaskActivity : AppCompatActivity() {
     }
     inner class TareaContador : AsyncTask<Void, Int, Void>() {
         override fun onPreExecute() {
-            bindings.tvCrono.text = "Comenzando la descarga..."
+            bindings.tvCrono.text = getString(R.string.comenzandoCont)
         }
-        override fun doInBackground(vararg p0: Void?): Void? {
+        override fun doInBackground(vararg p0: Void?): Void? { // Ejecucion hilo secundario
             var t = 10
             do {
                 publishProgress(t)
-
                 Thread.sleep(1000)
                 t--
             } while (t > 0)
             return null
         }
         override fun onProgressUpdate(vararg values: Int?) {
-            bindings.tvCrono.text = "Contador: ${values[0]}"
+            bindings.tvCrono.text = buildString {
+                append(getString(R.string.contador))
+                append(values[0])
+            }
         }
         override fun onPostExecute(result: Void?) {
-            bindings.tvCrono.text = "Contador terminado"
+            bindings.tvCrono.text = getString(R.string.contTerminado)
         }
         override fun onCancelled() {
-            bindings.tvCrono.text = "Contador terminado"
+            bindings.tvCrono.text = getString(R.string.contTerminado)
         }
     }
 }

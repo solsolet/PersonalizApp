@@ -333,7 +333,7 @@ Luego lo he añadido al layout `pantalla.xml`:
 ```
 #### Ejercicio 2
 ### Estilos y temas
-La realización de este ejercicio ha afectado al aspecto eneral de la aplicación así que se puede comprobar facilmente. Si se entra a su apartado se pueden apreciar los botones creados a partir de `fondo_boton.xml`
+La realización de este ejercicio ha afectado al aspecto general de la aplicación así que se puede comprobar fácilmente. Si se entra a su apartado se pueden apreciar los botones creados a partir de `fondo_boton.xml`
 ### Hilos
 Tras poner el código propuesto me salta el siguiente error:
 ```log
@@ -341,7 +341,8 @@ ANR in es.ua.eps.personalizapp (es.ua.eps.personalizapp/.MainActivity
 
 PID: 6609
 Reason: Input dispatching timed out (f20ec0d es.ua.eps.personalizapp/es.ua.eps.personalizapp.MainActivity is not responding. Waited 5000ms for FocusEvent(hasFocus=false)).
-                                                                    Parent: es.ua.eps.personalizapp/.MainActivity
+
+Parent: es.ua.eps.personalizapp/.MainActivity
 ErrorId: b231c25a-5b80-4e3e-a2a9-f85732731474
 Frozen: false
 Load: 0.57 / 0.22 / 0.4
@@ -385,4 +386,83 @@ CPU usage from 27160ms to -1ms ago (2025-11-07 23:11:31.874 to 2025-11-07 23:11:
     4% 488/android.hardware.graphics.composer3-service.ranchu: 0% user + 4% kernel
 63% TOTAL: 7.7% user + 51% kernel + 3.3% iowait + 1.1% irq
 ```
-Y se ha cerrado la aplicación. En otro intento se ve "Contador Terminado" en la actividad.
+Y se ha cerrado la aplicación mostrando así el dialogo _ANR_. En otro intento se ve "Contador Terminado" en la actividad.
+#### Ejercicio
+Para cumplir con el ejercicio he creado 4 nuevas clases, una para la actividad de hilos principal, `Hilos.kt` y el resto para cada solución nueva.
+##### Threads
+La implementación ha sido sencilla:
+```kotlin
+Thread {
+    var t = 10
+    do {
+        tvCrono.post {
+            tvCrono.text = "Contador: $t"
+        }
+        Thread.sleep(1000)
+        t--
+    } while (t > 0)
+        runOnUiThread {
+            tvCrono.text = getString(R.string.contTerminado)
+        }
+}.start()
+```
+He probado tanto `.post` como `runOnUiThread`para ver que los dos funcionaban perfectamente.
+
+##### Async Task
+Iniciamos la tarea asíncrona en `initUI` con `TareaContador().execute`y luego la gestión del hilo la hacemos con:
+```kotlin
+inner class TareaContador : AsyncTask<Void, Int, Void>() {
+    override fun onPreExecute() {
+        bindings.tvCrono.text = getString(R.string.comenzandoCont)
+    }
+    override fun doInBackground(vararg p0: Void?): Void? {
+        var t = 10
+        do {
+            publishProgress(t)
+            Thread.sleep(1000)
+            t--
+        } while (t > 0)
+        return null
+    }
+    override fun onProgressUpdate(vararg values: Int?) {
+        bindings.tvCrono.text = buildString {
+            append(getString(R.string.contador))
+            append(values[0])
+        }
+    }
+    override fun onPostExecute(result: Void?) {
+        bindings.tvCrono.text = getString(R.string.contTerminado)
+    }
+    override fun onCancelled() {
+        bindings.tvCrono.text = getString(R.string.contTerminado)
+    }
+}
+```
+Donde la iteración del contador la hace `doInBackground` y se actualiza en `onProgressUpdate`.
+
+_Async Task_ al estar obsoleto me aparecen _warnings_.
+
+##### Corrutinas
+Modificamos `build.gradle.kts Module:app` y `libs.versions.toml` para incluir las dependencias necesarias. Luego creamos una nueva clase `CorrutinasActivity.kt` que dentro de `initUI` incluye el scope de la corrutina:
+```kotlin
+GlobalScope.launch(Dispatchers.IO) {
+    var t = 10
+    do {
+        if(!isActive) {
+            break
+        }
+        launch(Dispatchers.Main) { // Interactuamos con interfaz
+            tvCrono.text = buildString {
+                append(getString(R.string.contador))
+                append(t)
+            }
+        }
+        Thread.sleep(1000)
+        t--
+    } while (t > 0)
+
+    launch(Dispatchers.Main) {  // Accedemos al interfaz
+        tvCrono.text = getString(R.string.contTerminado)
+    }
+}
+```

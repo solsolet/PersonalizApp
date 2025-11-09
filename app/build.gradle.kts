@@ -1,7 +1,6 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
-    //alias(libs.plugins.kotlin.compose)
 }
 
 android {
@@ -35,7 +34,6 @@ android {
         jvmTarget = "17"
     }
     buildFeatures {
-        //compose = true
         viewBinding = true
     }
 }
@@ -48,7 +46,5 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.activity)
-
-    // Dependencies de Debug (Ferramentes i Previews)
-    //debugImplementation(libs.androidx.compose.ui.tooling)
+    implementation(libs.kotlin.coroutines)
 }

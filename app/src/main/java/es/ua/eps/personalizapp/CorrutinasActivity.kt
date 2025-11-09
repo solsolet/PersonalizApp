@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import es.ua.eps.personalizapp.databinding.CorrutinasActivityBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
 
 class CorrutinasActivity : AppCompatActivity() {
@@ -25,16 +26,21 @@ class CorrutinasActivity : AppCompatActivity() {
             GlobalScope.launch(Dispatchers.IO) {
                 var t = 10
                 do {
-                    launch(Dispatchers.Main) {  // Accedemos al interfaz
-                        tvCrono.text = "Contador: $t"
+                    if(!isActive) {
+                        break
                     }
-
+                    launch(Dispatchers.Main) {  // Interactuamos con interfaz
+                        tvCrono.text = buildString {
+                            append(getString(R.string.contador))
+                            append(t)
+                        }
+                    }
                     Thread.sleep(1000)
                     t--
                 } while (t > 0)
 
                 launch(Dispatchers.Main) {  // Accedemos al interfaz
-                    tvCrono.text = "Contador terminado"
+                    tvCrono.text = getString(R.string.contTerminado)
                 }
             }
         }

@@ -21,19 +21,19 @@ class ThreadActivity : AppCompatActivity() {
             setContentView(root)
             Thread {
                 var t = 10
-
                 do {
-                    runOnUiThread {
-                        tvCrono.text = "Contador: $t"
+                    tvCrono.post {
+                        tvCrono.text = buildString {
+                            append(getString(R.string.contador))
+                            append(t)
+                        }//"Contador: $t"
                     }
-
                     Thread.sleep(1000)
                     t--
                 } while (t > 0)
-
-                runOnUiThread {
-                    tvCrono.text = "Contador terminado"
-                }
+                    runOnUiThread {
+                        tvCrono.text = getString(R.string.contTerminado)
+                    }
             }.start()
         }
     }
